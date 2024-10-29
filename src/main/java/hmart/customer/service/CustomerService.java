@@ -25,7 +25,7 @@ public class CustomerService {
     }
     private void validateDuplicateMember(Customer customer) {
         customerRepository.findById(customer.getId())
-                .ifPresent(m -> {throw new IllegalStateException("이미 존재하는 ID 회원입니다.");});
+                .ifPresent(m -> {throw new IllegalStateException("이미 존재하는 ID 회원입니다.");}); //람다 함수 찾아보기
     }
     // 회원 조회
     public List<Customer> findCustomers() {
